@@ -7,7 +7,7 @@
         </encoder>
     </appender>
 
-    <logger name="org.springframework" level="debug"/>
+    <logger name="org.springframework" level="INFO"/>
 
     <root level="INFO">
         <appender-ref ref="STDOUT"/>
