@@ -30,4 +30,9 @@ public class HelloController {
         return restTemplate.getForEntity("https://www.baidu.com/", String.class, new HashMap<>()).getBody();
     }
 
+    @GetMapping("/exception")
+    public String exception(){
+        throw new RuntimeException("exception test");
+    }
+
 }
