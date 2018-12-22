@@ -1,5 +1,6 @@
 package com.wuzhong.webapp;
 
+import com.alibaba.fastjson.JSON;
 import com.wuzhong.commons.result.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +23,7 @@ public class RestApiErrorAdvisor {
 
     @ExceptionHandler(Throwable.class)
     @ResponseBody
-    ResponseEntity<?> handleRestException(HttpServletRequest request, Throwable ex) {
+    ResponseEntity<String> handleRestException(HttpServletRequest request, Throwable ex) {
 
         String message = "InternalError";
         if (debug) {
@@ -32,7 +33,8 @@ public class RestApiErrorAdvisor {
             message = sb.toString();
         }
         int code = 500;
-        return new ResponseEntity<>(Result.err(code, message),
+        Result<Object> err = Result.err(code, message);
+        return new ResponseEntity<String>(JSON.toJSONString(err),
                 HttpStatus.INTERNAL_SERVER_ERROR);
 
     }

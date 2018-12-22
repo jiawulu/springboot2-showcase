@@ -1,5 +1,6 @@
 package com.wuzhong.commons.result;
 
+import com.alibaba.fastjson.JSON;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -39,6 +40,10 @@ public class Result<T> implements Serializable {
         result.message = message;
         result.success = false;
         return result;
+    }
+
+    public String toJSONString(){
+        return JSON.toJSONString(this);
     }
 
 
