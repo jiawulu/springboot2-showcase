@@ -49,4 +49,5 @@ dependencies {
     testImplementation('org.springframework.restdocs:spring-restdocs-mockmvc')
     implementation('com.spring4all:swagger-spring-boot-starter:1.8.0.RELEASE')
     compile project(':starter')
+    compile ('com.alibaba:fastjson:+')
 }
