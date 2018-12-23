@@ -1,4 +1,5 @@
 rootProject.name = 'springboot2-showcase'
 include 'webapp'
 include 'starter'
+include 'commons'
 
