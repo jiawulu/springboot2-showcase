@@ -1,6 +1,7 @@
 package com.wuzhong.lambda;
 
 import java.util.function.*;
+import java.util.stream.Stream;
 
 /**
  * @see java.util.function.Supplier       只有一个输出的函数
@@ -45,6 +46,9 @@ public class Case3_Function {
         System.out.println(binaryOperator3.apply(1,2));
         System.out.println(dogFunction.apply("xtq"));
 
+        //dog.getName
+        Stream.of("a","b").map(Dog::new).map(Dog::getName).forEach(System.out::println);
+
     }
 
     int add(int a, int b) {
@@ -68,6 +72,14 @@ public class Case3_Function {
             return "Dog{" +
                     "name='" + name + '\'' +
                     '}';
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
         }
     }
 
