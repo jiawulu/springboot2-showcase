@@ -2,4 +2,8 @@ rootProject.name = 'springboot2-showcase'
 include 'webapp'
 include 'starter'
 include 'commons'
+include 'feature:lambda'
+findProject(':feature:lambda')?.name = 'lambda'
+include 'feature:stream'
+findProject(':feature:stream')?.name = 'stream'
 
