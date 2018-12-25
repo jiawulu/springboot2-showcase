@@ -7,5 +7,7 @@ findProject(':feature:lambda')?.name = 'lambda'
 include 'feature:stream'
 findProject(':feature:stream')?.name = 'stream'
 include 'feature:reactivestream'
-findProject(':feature:stream')?.name = 'reactivestream'
+findProject(':feature:reactivestream')?.name = 'reactivestream'
+include 'feature:webflux'
+findProject(':feature:webflux')?.name = 'webflux'
 
