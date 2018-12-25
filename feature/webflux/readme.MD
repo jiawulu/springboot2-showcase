@@ -32,3 +32,24 @@
 1. request.startAsync : AsyncContext
 2. CompletableFuture.runAsync 在异步线程池中执行耗时任务
 
+## SSE
+
+> server send events
+
+### server
+1. response.setContentType("text/event-stream")
+2. response.setCharacterEncoding("utf-8")
+3. [可选]response.getWriter().write("event:tag\n\n");
+3. response.getWriter().write("datexxxxx\n\n");
+4. response.getWriter().flush()
+
+### js
+1. var sse = new EventSource("url")
+2. sse.onmessage = function(e){
+        console.log(e.data)   //会自动重连
+    }
+3. sse.addEventListener(tag,function(e){
+        sse.close()
+    })
+
+
