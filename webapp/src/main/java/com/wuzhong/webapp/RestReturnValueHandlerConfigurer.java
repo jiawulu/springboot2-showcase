@@ -58,6 +58,11 @@ public class RestReturnValueHandlerConfigurer implements InitializingBean {
         public void handleReturnValue(Object returnValue, MethodParameter returnType, ModelAndViewContainer mavContainer,
                                       NativeWebRequest webRequest) throws Exception {
 
+            if (null == returnValue){
+                proxyObject.handleReturnValue(returnValue, returnType, mavContainer, webRequest);
+                return;
+            }
+
             String output = null;
             if (returnValue instanceof Result) {
                 output = JSON.toJSONString(returnValue);
