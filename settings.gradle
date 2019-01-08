@@ -10,4 +10,6 @@ include 'feature:reactivestream'
 findProject(':feature:reactivestream')?.name = 'reactivestream'
 include 'feature:webflux'
 findProject(':feature:webflux')?.name = 'webflux'
+include 'feature:reactor'
+findProject(':feature:reactor')?.name = 'reactor'
 
