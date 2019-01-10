@@ -23,3 +23,17 @@
 ## 总结
 
 1. subscribeOn 影响全部的流， 但是会被 publishOn覆盖， publishOn 影响之后的stream流
+
+## q&a
+1. What are the different types of schedulers that are available in Reactor?
+    1. single,parallel,immediate,io,elastic
+2. What scheduler should be used for blocking operations?
+    1. elastic
+3. What scheduler should be used for computation-intensive operations?
+    1. single
+4. How are PublishOn and SubscriberOn different from each other?
+    1. publishOn alter the below, subscriberOn alter the others
+5. What is the limitation of ParallelFlux?
+    1. finally
+6. Which operators are available for generating a ConnectedFlux?
+    1. publish() replay()
