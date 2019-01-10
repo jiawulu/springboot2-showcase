@@ -1,3 +1,5 @@
+https://github.com/PacktPublishing/Hands-On-Reactive-Programming-with-Reactor/tree/master/Chapter08
+
 1. How is an error handled in Reactor?
     1. doOnError
 2. Which operators allow us to configure error handling?
