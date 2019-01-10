@@ -19,6 +19,7 @@
 /out/
 target
 build
+out
 
 ### NetBeans ###
 /nbproject/private/
