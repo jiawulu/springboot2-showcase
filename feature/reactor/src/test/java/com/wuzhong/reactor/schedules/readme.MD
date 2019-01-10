@@ -14,6 +14,12 @@
     >Schedulers.parallel scheduler executes work on a multiple-worker thread pool. It creates workers based on the number of available processors. This is the default scheduler used in various Reactor operators.
     System.setProperty("reactor.schedulers.defaultPoolSize","100");
     
-6. publishOn
+6. publishOn, 影响下面的流
+     >The publishOn operator intercepts events from a publisher at a configured point in the execution chain, and sends them to a different scheduler for the rest of the chain. As a result, the operator changes the threading context of the downstream reactive chain. It is important to note that the operator only influences the downstream event chain. It does not alter the upstream chain, and leaves the upstream execution to the default execution model.
 
-7. 
+7. subscribeOn
+    >The subscribeOn operator intercepts events from a publisher in the execution chain and sends them to a different scheduler for the complete chain. It is important to note that the operator changes the execution context for the complete chain, unlike the publishOn operator, which only alters the execution of a downstream chain
+    
+## 总结
+
+1. subscribeOn 影响全部的流， 但是会被 publishOn覆盖， publishOn 影响之后的stream流
